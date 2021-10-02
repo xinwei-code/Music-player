@@ -1,0 +1,25 @@
+<view class="detail-container" wx:if="{{musicInfo[0].al.picUrl}}">
+    <view class="fixbg" style="background-image: url({{musicInfo[0].al.picUrl}})"></view>
+    <!-- 歌曲标题 -->
+    <view class="detail-header">{{musicInfo[0].name}}</view>
+    <!-- 播放转盘区域 -->
+    <view class="detail-play">
+        <!-- 网易云logo -->
+        <image src="../../static/logo.png" mode="widthFix" class="cloud-logo" />
+        <!-- 播放旋转臂 -->
+        <image src="/static/needle.png" class="needle" />
+        <!-- 歌曲封面 -->
+        <image src="/static/disc.png" class="image-border" />
+        <image class="music-cover  {{!playicon?'animation-image':''}}" src="{{musicInfo[0].al.picUrl}}" />
+        <view class="play-state-box" bindtap="playStateChange">
+            <image src="/static/pause-icon.png" wx:if="{{!playicon}}" />
+            <image src="/static/play-icon.png" wx:else />
+        </view>
+    </view>
+    <!-- 歌词区域 -->
+    <view class="music-text-box">
+        <view class="music-text" style="transform: translateY(0rpx)">
+            <view class="text-column" wx:for="{{musicIyric}}" wx:key="index">{{item.lyric}}</view>
+        </view>
+    </view>
+</view>

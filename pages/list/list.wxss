@@ -1,0 +1,126 @@
+.playlist-container {
+ background-image: linear-gradient(to bottom, #477ab3,#5380b7);
+}
+.playlist-cover {
+    display: flex;
+    padding: 15px;
+    width: 100%;
+    height: 116px;
+}
+.cover-box {
+    position: relative;
+    margin-right: 16px;
+}
+.play-num-box {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+.playlist-cover-image {
+    width: 220rpx;
+    height: auto;
+    border-radius: 4px;
+}
+.avatar-info {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #d5e5f9;
+    margin: 14px 0;
+}
+.creator-nickname {
+    margin-left: 6px;
+}
+
+.cover-description {
+    width: 200px;
+    color: #b4cae7;
+    font-size: 12px;
+}
+.btn-box {
+position: relative;
+}
+.share-img {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+.share-btn {
+    width: 140px;
+    background-color: #638bbc;
+    border-radius: 18px;
+    font-size: 14px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+/* 详细歌曲列表 */
+.deatil-songs-box {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+}
+/* 播放全部图标 */
+.play-all {
+    width: 20px;
+    height: auto;
+    margin-right: 12px;
+}
+/* 字体颜色 */
+.font-style {
+    font-size: 13px;
+    color: #999999;
+}
+.song-list-header {
+    display: flex;
+    align-items: center;
+}
+
+
+/* 歌曲列表区域 */
+.song-list-item {
+    display: flex;
+    align-items: center;
+    color: #333333;
+    margin: 15px 0;
+}
+.item-left {
+    color: #9a9a9a;
+    flex: 0.1;
+}
+.item-center {
+    flex: 1;
+    font-size: 14px;
+}
+.song-name {
+    width: 500rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.singer-name-box {
+    display: flex;
+    align-items: center;
+}
+.singer-name {
+    font-size: 12px;
+    color: #9a9a9a;
+    width: 500rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.item-right {
+width: 20px;
+height: 20px;
+}

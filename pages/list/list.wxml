@@ -1,0 +1,63 @@
+<!-- 将播放量进行格式化 -->
+<wxs module="m1">
+    var number = function(num) {
+        var n = (num / 100000000).toFixed(1) 
+        return n + '亿'
+    }
+    module.exports = {
+     number:number
+    }
+</wxs>
+<!-- 等获取到数据后再显示 -->
+<view class="playlist-container" wx:if="{{playlist.name}}">
+    <!-- 封面区域 -->
+    <view class="playlist-cover">
+        <view class="cover-box">
+            <view class="play-num-box">
+                <image mode="widthFix" src="/static/play.png" style="width:12px;height:auto" />
+                <view class="play-count">{{m1.number(playlist.playCount)}}</view>
+            </view>
+            <image class="playlist-cover-image" mode="widthFix" src="{{playlist.coverImgUrl}}" />
+        </view>
+        <view class="cover-info">
+            <view style="color:#fdffff">{{playlist.name}}</view>
+            <view class="avatar-info">
+                <image mode="widthFix" style="width:25px;height:auto;border-radius:50%" src="{{playlist.creator.avatarUrl}}" />
+                <view class="creator-nickname">{{playlist.creator.nickname}}</view>
+            </view>
+            <view class="cover-description">{{playlist.description}}</view>
+        </view>
+    </view>
+    <!-- 分享按钮区域 -->
+    <view class="btn-box">
+        <image class="share-img" src="/static/share.png" />
+        <button class="share-btn" open-type="share" bindtap="share">分享给微信好友</button>
+    </view>
+    <!-- 歌曲列表 -->
+    <view class="deatil-songs-box">
+        <!-- header区域 -->
+        <view class="song-list-header">
+            <image class="play-all" src="/static/play-all.png" mode="widthFix" />
+            <view>
+                播放全部
+                <text class="{{'font-style'}}">(共{{playlist.trackCount + 1}}首)</text>
+            </view>
+        </view>
+        <!-- list区域 -->
+        <view class="songs-list">
+            <block wx:for="{{playlist.tracks}}" wx:key="index">
+                <view class="song-list-item" bindtap="goToDetail" data-id="{{item.id}}">
+                    <view class="item-left">{{index + 1}}</view>
+                    <view class="item-center">
+                        <view class="song-name">{{item.name}}</view>
+                        <view class="singer-name-box">
+                            <image wx:if="{{flag[index].rscl}}" src="/static/SQ.png" style="width:18px;height:11px;margin-right:4px" />
+                            <view class="singer-name">{{item.ar[0].name}} - {{item.name}}</view>
+                        </view>
+                    </view>
+                    <image class="item-right" src="/static/video.png"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,74 @@
+<view class="container">
+    <!-- 顶部搜索框 -->
+    <view class="search-input">
+        <input class="search-song" bindinput="searchMsg" model:value="{{kw}}" type="text" placeholder="搜索歌曲" focus="true"></input>
+        <icon wx:if="{{kw}}" bindtap="cancelSearch" class="cancel-search" type="clear" size="18" color="#e6e6e6"></icon>
+    </view>
+    <!-- 当用户输入的Kw为空时展示 -->
+    <view class="search-container" wx:if="{{kw == ''}}">
+        <!-- 历史记录区域 -->
+        <view class="search-history-box">
+            <view class="history-header">
+                <text>历史记录</text>
+                <image bindtap="deleteAllKw" src="/static/delete.png" mode="widthFix" class="delete-history" />
+            </view>
+            <view class="history-list">
+                <view class="history-item" bindtap="getSearchResult" data-kw="{{item}}" wx:for="{{historyList}}" wx:key="index">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <!-- 热搜榜区域 -->
+        <view class="hot-search-list">
+            <text class="hot-title">热搜榜</text>
+            <block wx:for="{{hotSearchList}}" wx:key="index">
+                <view class="hot-search-item" bindtap="hotSearchClick" data-val="{{item}}">
+                    <view class="search-index">{{index + 1}}</view>
+                    <view class="search-content">
+                        <view class="search-singer">
+                            <text>{{item.searchWord}}</text>
+                            <image src="{{item.iconUrl}}" class="state-icon" wx:if="{{item.iconUrl}}" />
+                        </view>
+                        <view class="search-cntent-detail" style="font-size:{{'12px'}}">
+                            {{item.content}}
+                        </view>
+                    </view>
+                    <view class="search-score">{{item.score}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <!-- 搜索建议列表 -->
+    <!-- kw不为空时 -->
+    <view class="search-suggestion" wx:elif="{{kw !== '' && flag}}">
+        <view class="suggestion-header" bindtap="getSearchResult" data-kw="{{kw}}">
+            搜索:"{{kw}}"
+        </view>
+        <block wx:for="{{allMatch}}" wx:key="index">
+            <view bindtap="getSearchResult" data-kw="{{item.keyword}}" class="suggestion-item">
+                <icon class="search-icon" type="search" size="23" color="#e6e6e6"></icon>
+                <view class="match-result">{{item.keyword}}</view>
+            </view>
+        </block>
+    </view>
+    <!-- 歌曲列表 -->
+    <scroll-view scroll-y="{{true}}" class="search-list" wx:else style="height:{{scrollHeight - 30 + 'px'}}" enhanced="{{true}}" show-scrollbar="{{true}}" wx:else>
+        <block wx:for="{{searchResult}}" wx:key="index">
+            <view class="search-result-item" data-id="{{item.id}}" bindtap="goToDetail">
+                <!-- 左边盒子 -->
+                <view class="song-info">
+                    <view class="song-name" style="color:{{item.name === kw ? '#5072a2': ''}}">
+                        {{item.name}}
+                    </view>
+                    <view class="song-author">
+                        <text style="color:{{item.ar[0].name === kw ? '#5072a2': ''}}">{{item.ar[0].name}}</text>
+                        -
+                        <text style="color:{{item.al.name === kw ? '#5072a2': ''}}">{{item.al.name}}</text>
+                    </view>
+                </view>
+                <!-- 右边盒子 -->
+                <image src="../../static/video.png" style="width:25px" mode="widthFix" />
+            </view>
+        </block>
+    </scroll-view>
+</view>

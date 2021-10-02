@@ -1,0 +1,178 @@
+/* 搜索框 */
+.search-input {
+    position: relative;
+}
+.cancel-search {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+}
+.search-song {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #f7f7f7;
+    border-radius: 18px;
+    font-size: 13px;
+    color: #333333;
+    padding-left: 70rpx;
+    box-sizing: border-box;
+}
+.search-song::after {
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAuBJREFUWEftlk1IFVEUx//nziKINi1KKbevqMCiWkWNc96IYmgQkdDnupK+oHa1ql0t+iAL2vWBm4iwSBTHM/o0aGHUQqPeJkQja1mbwJkTl0aQpzlvBkyC7u69ufd/fnPm3v//EpZ50DLXx3+Af6MDIrJKVfcR0SYi2gpgR7J3RlX1naq+J6JuZv6RdU+ldiAIgl3GmDsAtqWIv43juMP3/VdZIBYFEJETAO4mgsNE1KWq447jjNn/oijaQkSbVfUQgN3JvJPMfK9aiD8CiEgrgOeJ0E1mPreYqIjcAHA2mdPGzC+qgVgQYHBwsBDH8UcrwMypn2luIRFR+9sYs6GhoaGcBjFPvFwur5icnLT0jQCOMvPjNJEKgCMAHgHor6uray0UCj8XWz8PIAiCY8aYBwB6mHlvluKzc0XkJYCWOI6P+77/MBOAiFwDcIGIzniedzsPQBiGp1X1FoDrzHwxE0AYhr2q2hTHcbPv+315AIIgaDLG9BJRn+d5zZkAROQLgJooimobGxun8wD09/fXOI5jdaaZuTYTQBiGU6q6znGcta7rfssDMDQ0tCaKoq+qOlUsFuuyAnSratvvE8hhHgAR8QCIqj4tFosHMgGIyBUAl4iow/O8zjwAYRieUlVr35eZ+WomgIGBgcNEZM/+MDPvyQMgIqXEmvcz87NMADb5AFgBGz6pFlwpPseSnzDzwbQXWNBmkwQcyWvFRPTZGNPmuu6bXAB2UUUSplqyiMxasF1+npltOKWOtDiem4g9RNQTRdEHewmxyvZy4jjORlVtsdY7p9qY4zjtruuOpxGkJl2SjPY02HBabIwYYzqjKLpPRCsBVAWRCmAr2oScmJhoN8bUE1G9qtprmbFF7AXFdmY2/5M0/QTAOmAqRFUAaW2sfF4qlVbPzMy8BlBIg1gSAAsUBMF6e1Elou0ARpl550IvsmQAtliyf7oAfLe+/tcBqvl0S9qB/wDVdOAXrUQvMPIpi5gAAAAASUVORK5CYII=");
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+}
+
+.history-header {
+    display: flex;
+    height: 60rpx;
+    justify-content: space-between;
+    align-items: center;
+    color: #333333;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.delete-history {
+    width: 25px;
+}
+
+/* 搜索历史记录区域 */
+.history-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: pink; */
+    width: 100%;
+}
+.history-item {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    padding: 3px 8px;
+    margin-right: 9px;
+    margin-bottom: 8px;
+    color: #333333;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+}
+/* 热搜榜 */
+.hot-search-list {
+    margin-top: 20px;
+}
+
+.hot-title {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+.hot-search-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18rpx 0;
+}
+.hot-search-item:nth-child(-n+4) .search-index{
+    color: red;
+}
+
+
+/* 左 */
+.search-index {
+    width: 60rpx;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* 中 */
+.search-content {
+    flex: 1;
+}
+.search-singer {
+    font-weight: 700;
+    font-size: 14px;
+}
+.state-icon {
+    width: 20px;
+    height: 13px;
+    margin-left: 8px;
+}
+.search-cntent-detail {
+    color: #e6e6e6;
+    width: 450rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* 右 */
+.search-score {
+    width: 140rpx;
+    font-size: 12px;
+    color: #e6e6e6;
+    text-align: center;
+}
+
+
+/* 搜索建议区域 */
+.suggestion-header {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 10px;
+    margin-top: 8px;
+    color: skyblue;
+    font-size: 13px;
+}
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    margin: 18px 0;
+    color: #666666;
+}
+.match-result {
+font-size: 13px;
+margin-left: 8px;
+}
+
+/* 搜索结果列表区域 */
+.search-result-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80rpx;
+    padding: 6px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+.song-name {
+    font-size: 14px;
+    margin-bottom: 3px;
+    width: 500rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.song-author {
+    font-size: 12px;
+    color: grey;
+    width: 500rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* 隐藏滚动条的样式 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 动态给字体添加样式 */

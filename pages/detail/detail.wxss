@@ -1,0 +1,89 @@
+/* 头部歌曲标题 */
+.detail-header {
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+/* 播放盘 */ 
+.detail-play {
+    width: 100%;
+    height: 500rpx;
+    margin-top: 80px;
+    position: relative;
+}
+/* 旋转臂 */
+.needle {
+    position: absolute;
+    top: -58px;
+    left: 189px;
+    width: 150rpx;
+    height: 240rpx;
+    z-index: 1;
+}
+
+/* logo */
+.cloud-logo {
+    position: absolute;
+    top: -60px; 
+    left: 5%;
+    width: 205rpx;
+    height: auto;
+}
+
+.image-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 500rpx;
+    height: 500rpx;
+    margin: auto;
+}
+/* 封面 */
+.music-cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 350rpx;
+    height: 350rpx;
+    border-radius: 50%;
+    margin: auto;
+}
+.animation-image {
+    animation: 20s linear infinite move;
+}
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.play-state-box {
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+     width: 45px;
+    height: 45px;
+}
+.play-state-box image{
+    width: 45px;
+    height: 45px;
+}
+
+/* 歌词区域 */
+.music-text-box {
+  /* height: 246rpx; */
+  line-height: 82rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #949495;
+  overflow: hidden;
+}

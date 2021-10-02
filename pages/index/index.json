@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "my-search": "/components/my-search/my-search",
+        "home-main": "/components/home-main/home-main"
+    }
+}

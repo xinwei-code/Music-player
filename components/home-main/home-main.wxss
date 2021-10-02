@@ -1,0 +1,41 @@
+.cate-list-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* 左边盒子 */
+.item-left {
+    position: relative;
+}
+
+.item-left-image {
+    width: 220rpx;
+    display: block;
+    border-radius: 5px;
+}
+.image-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 0 0px 4px 5px;
+}
+
+/* 右边盒子 */
+.item-right {
+display: flex;
+flex: 1;
+flex-direction: column;
+justify-content: space-around;
+margin-left: 8px;
+}
+.song-title {
+    width: 220px;
+    font-size: 13px;
+    color: #666666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="search-input">
+      <icon class="search-icon" type="search" size="23" color="#ccc"></icon>
+      <text class="">搜索歌曲</text>
+  </view>
+</view>

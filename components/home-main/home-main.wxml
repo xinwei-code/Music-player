@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="cate-list">
+    <view class="cate-list-item" wx:for="{{homeData}}" wx:key="index" bindtap="goToList"
+    id="{{item.id}}" data-id="{{item.id}}">
+      <!-- 左边盒子 -->
+      <view class="item-left">
+        <image class="item-left-image" src="{{item.coverImgUrl}}" mode="widthFix" />
+        <text class="image-title">{{item.updateFrequency}}</text>
+      </view>
+      <!-- 右边盒子 -->
+      <view class="item-right">
+        <view class="song-title" wx:for="{{item.tracks}}" wx:key="index">
+          {{ index + 1 + '.' + item.first + '-' + item.second}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
