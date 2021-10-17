@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "6e89c236-bbfd-417b-8867-1742016e2bb9",
+		"name": "网易云音乐API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "获取歌曲详情信息",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/song/detail?ids=1830729795",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"song",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "ids",
+							"value": "1830729795"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "匹配搜索建议",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/search/suggest?keywords= 海阔天空&type=mobile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"search",
+						"suggest"
+					],
+					"query": [
+						{
+							"key": "keywords",
+							"value": " 海阔天空"
+						},
+						{
+							"key": "type",
+							"value": "mobile"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "首页热门列表数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/toplist/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toplist",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "热搜榜单数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/search/hot/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"search",
+						"hot",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "根据关键词搜索歌曲",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cloudsearch?keywords=海阔天空",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cloudsearch"
+					],
+					"query": [
+						{
+							"key": "keywords",
+							"value": "海阔天空"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取歌单详情信息",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/playlist/detail?id=19723756",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlist",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "19723756"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
